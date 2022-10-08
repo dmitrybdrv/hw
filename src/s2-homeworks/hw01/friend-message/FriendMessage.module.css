@@ -1,5 +1,7 @@
 .friendMessage {
-
+    background-color: #e1e2f4;
+    border-radius: 15px;
+    margin: 10px;
 }
 
 .friendImageAndText {
@@ -7,11 +9,13 @@
 }
 
 .friendImageAndText img {
-
+    border-radius: 50%;
+    width: 60px;
+    margin: 10px;
 }
 
 .friendText {
-
+    padding-left: 10px
 }
 
 .friendText:after {
@@ -26,6 +30,7 @@
 
 }
 
-.friendTime {
 
+.friendTime {
+    padding-left: 10px
 }
