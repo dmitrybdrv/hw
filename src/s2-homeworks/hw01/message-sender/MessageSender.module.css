@@ -1,8 +1,15 @@
 .sendForm {
-
+    margin-left: 50px;
+    background-color: #aab9e7;
+    width: 350px;
+    min-height: 50px;
+    height: auto;
+    padding: 15px;
+    border-radius: 15px;
 }
 
 .textarea {
+    width: 250px;
 
 }
 
@@ -13,6 +20,7 @@
 .button:hover {
 
 }
+
 .button:active {
 
 }

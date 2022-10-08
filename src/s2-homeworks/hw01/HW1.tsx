@@ -32,8 +32,7 @@ export const message0: MessageType = {
         name: 'Brad',  // можно менять
     },
     message: {
-        text: 'William Bradley Pitt (born December 18, 1963) is an American actor and film producer. ' +
-            'He is the recipient of various accolades, including two Academy Awards, a British Academy Film Award, two Golden Globe Awards, and a Primetime Emmy Award.', // можно менять
+        text: 'William Bradley Pitt (born December 18, 1963) is an American actor and film producer.',  // можно менять
         time: '23:59', // можно менять
     },
 }

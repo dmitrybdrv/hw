@@ -2,6 +2,8 @@
     background-color: #e1e2f4;
     border-radius: 15px;
     margin: 10px;
+    max-width: 50%;
+    min-width: 80px;
 }
 
 .friendImageAndText {
