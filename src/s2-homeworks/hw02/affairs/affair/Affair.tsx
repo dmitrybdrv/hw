@@ -6,8 +6,11 @@ import s2 from '../Affairs.module.css'
 
 type AffairPropsType = {
     affair: AffairType
-    deleteAffairCallback: (_id: number) => void
+    deleteAffairCallback: (_id: AffairType['_id']) => void
 }
+
+
+
 
 function Affair(props: AffairPropsType) {
 
