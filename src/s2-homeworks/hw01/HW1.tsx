@@ -32,7 +32,7 @@ export const message0: MessageType = {
         name: 'Brad',  // можно менять
     },
     message: {
-        text: 'William Bradley Pitt (born December 18, 1963) is an American actor and film producer.',  // можно менять
+        text: 'William Bradley Pitt (born December 18, 1963) is an American.',  // можно менять
         time: '23:59', // можно менять
     },
 }
