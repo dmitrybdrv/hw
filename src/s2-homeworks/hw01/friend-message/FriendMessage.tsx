@@ -18,7 +18,6 @@ export type FriendMessage = {
 
 
 const FriendMessage = (props: FriendMessage) => {
-    console.log(props)
     return (
         <div
             id={'hw1-friend-message-' + props.message.id}
@@ -26,7 +25,7 @@ const FriendMessage = (props: FriendMessage) => {
             <div className={s.friendImageAndText}>
                 <img id={'hw1-friend-avatar-' + props.message.id}
                     // создаёт студент
-                    src={props.message.user.avatar}
+                    src={props.message.user.avatar} alt={'ava'}
                     //
                 />
                 <div className={s.friendText}>

@@ -37,13 +37,12 @@ const defaultAffairs: AffairType[] = ([
 
 
 export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] => {
-    let result = affairs.filter(el => filter === 'low' ? el.priority === 'low' : filter === 'middle' ? el.priority === 'middle' : filter === 'high' ? el.priority === 'high' : filter === 'all' ? affairs : '')
-    return result
+    return affairs.filter(el => filter === 'low' ? el.priority === 'low' : filter === 'middle' ? el.priority === 'middle' : filter === 'high' ? el.priority === 'high' : filter === 'all' ? affairs : '')
 }
 
 
 export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] => {
-    return affairs
+    return affairs.filter(el => el._id !== _id)
 }
 
 
