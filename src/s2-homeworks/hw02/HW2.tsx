@@ -23,7 +23,7 @@ export type FilterType = 'all' | AffairPriorityType
 export type AffairType = {
     _id: number
     name: string
-    priority: AffairPriorityType
+    priority: 'high' | 'low' | 'middle'
 }
 
 
