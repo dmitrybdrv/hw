@@ -20,10 +20,11 @@ import s2 from '../../s1-main/App.module.css'
 
 export type AffairPriorityType = 'high' | 'low' | 'middle'
 export type FilterType = 'all' | AffairPriorityType
+
 export type AffairType = {
     _id: number
     name: string
-    priority: 'high' | 'low' | 'middle'
+    priority: AffairPriorityType
 }
 
 
@@ -37,7 +38,15 @@ const defaultAffairs: AffairType[] = ([
 
 
 export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] => {
-    return affairs.filter(el => filter === 'low' ? el.priority === 'low' : filter === 'middle' ? el.priority === 'middle' : filter === 'high' ? el.priority === 'high' : filter === 'all' ? affairs : '')
+
+    if(filter === 'high') {
+        return affairs.filter(el => el.priority === 'high')
+    } else if (filter === 'middle') {
+        return affairs.filter(el => el.priority === 'middle')
+    } else if (filter === 'low') {
+        return  affairs.filter(el => el.priority === 'low')
+    } else {return affairs}
+
 }
 
 
