@@ -6,7 +6,7 @@ import s2 from '../Affairs.module.css'
 
 type AffairPropsType = {
     affair: AffairType
-    deleteAffairCallback: (_id: AffairType['_id']) => void
+    deleteAffairCallback: (_id: number) => void
 }
 
 
@@ -16,7 +16,6 @@ function Affair(props: AffairPropsType) {
 
     const deleteCallback = (_id: number) => {
         props.deleteAffairCallback(props.affair._id)
-        console.log(_id)
     }
 
     const nameClass = s.name + ' ' + s2[props.affair.priority]
