@@ -28,7 +28,7 @@ function Affair(props: AffairPropsType) {
 
             <div id={'hw2-priority-' + props.affair.priority} hidden>{props.affair.priority}</div>
 
-            <button id={'hw2-button-delete-' + props.deleteAffairCallback} className={buttonClass}
+            <button id={'hw2-button-delete-' + props.affair._id} className={buttonClass}
                     onClick={() => deleteCallback(props.affair._id)}> x
             </button>
 
