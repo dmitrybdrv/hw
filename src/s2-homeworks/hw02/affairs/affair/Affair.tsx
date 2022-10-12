@@ -1,5 +1,5 @@
 import React from 'react'
-import { AffairType } from '../../HW2'
+import {AffairType} from '../../HW2'
 import s from './Affair.module.css'
 import s2 from '../Affairs.module.css'
 
@@ -8,8 +8,6 @@ type AffairPropsType = {
     affair: AffairType
     deleteAffairCallback: (_id: number) => void
 }
-
-
 
 
 function Affair(props: AffairPropsType) {
@@ -26,11 +24,13 @@ function Affair(props: AffairPropsType) {
     return (
         <div id={'hw2-affair-' + props.affair._id} className={affairClass}>
 
-            <div id={'hw2-name-' + props.affair._id} className={nameClass}> {props.affair.name} </div>
+            <div id={'hw2-name-' + props.affair.name} className={nameClass}>{props.affair.name}</div>
 
-            <div id={'hw2-priority-' + props.affair._id} hidden> {props.affair.priority} </div>
+            <div id={'hw2-priority-' + props.affair.priority} hidden>{props.affair.priority}</div>
 
-            <button id={'hw2-button-delete-' + props.affair._id} className={buttonClass} onClick={() => deleteCallback(props.affair._id)}> x </button>
+            <button id={'hw2-button-delete-' + props.deleteAffairCallback} className={buttonClass}
+                    onClick={() => deleteCallback(props.affair._id)}> x
+            </button>
 
         </div>
     )
