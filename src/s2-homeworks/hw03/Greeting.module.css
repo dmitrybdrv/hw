@@ -53,7 +53,7 @@
     padding: 8px 20px;
     grid-area: button;
     cursor: pointer;
-margin-left: 10px;
+    margin-left: 10px;
 }
 
 .button:focus {
@@ -74,5 +74,5 @@ margin-left: 10px;
 }
 
 .greeting {
-grid-area: greeting;
+    grid-area: greeting;
 }
