@@ -1,20 +1,71 @@
-.input:focus {
-}
-
-.input {
-}
-
 .inputWrapper {
+
+
 }
 
 .superInput {
+    outline: none;
+
+    width: 350px;
+    height: 40px;
+
+    font-size: 20px;
+    padding: 5px;
+
+    border-radius: 5px;
+    border: 1px solid #a19f9f;
+}
+
+.input {
+    outline: none;
+
+    width: 350px;
+    height: 40px;
+
+    font-size: 20px;
+    padding: 5px;
+
+    border-radius: 5px;
+    border: 1px solid #a19f9f;
+}
+
+.input:focus {
+    outline: none;
+    width: 350px;
+    height: 40px;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .errorInput {
-}
+    outline: none;
 
-.errorInput:focus {
+    width: 350px;
+    height: 40px;
+
+    font-size: 20px;
+    padding: 5px;
+
+    border-radius: 5px;
+
+    border: 1px solid red;
+    background-color: #f3c3c3;
 }
 
 .error {
+    color: red;
 }
+
+
+/*.errorInput:focus {*/
+/*    border: 2px solid #ff0000;*/
+/*    outline: none;*/
+/*}*/
+
+
+
+
+
+
+
