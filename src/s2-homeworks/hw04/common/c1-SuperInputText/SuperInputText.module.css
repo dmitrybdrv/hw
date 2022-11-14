@@ -16,6 +16,19 @@
     border: 1px solid #a19f9f;
 }
 
+.superInput {
+    outline: none;
+
+    width: 350px;
+    height: 40px;
+
+    font-size: 20px;
+    padding: 5px;
+
+    border-radius: 5px;
+    border: 1px solid #a19f9f;
+}
+
 .input:focus {
     outline: none;
     width: 350px;
