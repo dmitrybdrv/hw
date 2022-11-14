@@ -46,14 +46,12 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         // e.key === 'Enter' && // и если нажата кнопка Enter
         // onEnter() // то вызвать его
         onKeyPress?.(e)
-        onEnter && e.key === 'Enter' &&  onEnter()
+        onEnter && e.key === 'Enter' && onEnter()
     }
 
     const finalSpanClassName = s.error + (spanClassName ? ' ' + spanClassName : '')
-    const finalInputClassName = !error ? `${s.input} ${s.superInput}`  : s.errorInput
-    //const finalInputClassName = s.input //+ (error ? s.errorInput : ' ' /*+ s.superInput*/) //+ (className ?
-    // ' ' +
-    // s.className : '') // задача на смешивание классов
+    const finalInputClassName = `${error ? s.errorInput : s.input} ${className ? s.superInput : ''}`
+
 
     return (
         <div className={s.inputWrapper}>
