@@ -31,7 +31,7 @@ const Stand = () => {
                             setError(stateForAllInputs.trim() ? '' : 'Error')
                             setValue('')
                         }}
-                        className={s.test}
+                        className={s.superInput}
                     />
                 </div>
             </div>
