@@ -57,10 +57,20 @@
 }
 
 
-/*.errorInput:focus {*/
-/*    border: 2px solid #ff0000;*/
-/*    outline: none;*/
-/*}*/
+.errorInput:focus {
+    outline: none;
+
+    width: 350px;
+    height: 40px;
+
+    font-size: 20px;
+    padding: 5px;
+
+    border-radius: 5px;
+
+    border: 3px solid red;
+    background-color: #f3c3c3;
+}
 
 
 
