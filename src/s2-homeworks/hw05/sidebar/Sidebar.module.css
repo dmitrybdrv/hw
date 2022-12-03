@@ -25,18 +25,21 @@
 
 .nav {
     display: grid;
-
 }
 
 .nav a {
     text-decoration: none;
     text-align: center;
-    line-height: 2rem;
+    line-height: 3rem;
+    position: relative;
+
 }
 
 .nav a:hover {
     text-decoration: none;
     color: white;
+    background: #ecdade;
+    border-radius: 10px;
 }
 
 .nav a.active {
