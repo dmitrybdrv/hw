@@ -1,8 +1,18 @@
 .burgerMenuIcon {
+    cursor: pointer;
+    position: absolute;
+    padding-top: 10px;
+    padding-left: 20px;
 }
 
 .header {
+    background: linear-gradient(#c9c9f3, #eedbde);
+    opacity: .9;
+    box-shadow: 5px 3px 15px gray;
 }
 
+
 .header h1 {
+    text-align: end;
+    margin-right: 20px;
 }

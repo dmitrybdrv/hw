@@ -1,58 +1,60 @@
 .message {
-    max-width: 740px;
-    min-height: 100px;
-    overflow-wrap: break-word;
+    background: none;
+    min-width: 50px;
+    max-width: 500px;
+    text-align: start;
     margin-left: 50%;
-    display: block;
+    margin-bottom: 20px;
+
 }
 
 
 .imageAndText {
-    width: 740px;
+
 }
 
-
 .imageAndText img {
-    max-width: 60px;
+    width: 70px;
+    height: 70px;
+    margin-left: 20px;
     float: right;
-    border-radius: 50%;
+
 }
 
 .text {
-    max-width: 650px;
-    min-width: 50px;
 
-    color: #FFFFFF;
-    background-color: #0065cb;
-    border-radius: 15px;
-
-    min-height: 60px;
-    padding: 10px;
-    box-shadow: 0 3px 5px 3px #e7e5e5;
 
 }
 
 
 .text:after {
-    content: "";
-    clear: both;
-    display: table;
 
 }
 
 .name {
     font-weight: bold;
-
+    background: #f2f4f8;
+    max-width: 400px;
+    border-radius: 10px 10px 0 0;
+    padding-left: 5px;
+    box-shadow: 3px 5px 3px #e7e5e5;
 }
 
 .messageText {
-    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    background: #f2f4f8;
+    width: 400px;
+    padding: 10px;
+    box-shadow: 3px 5px 3px #e7e5e5;
 }
 
 .time {
-    float: right;
     font-weight: bold;
-    margin-right: 7px;
+    background: #f2f4f8;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    max-width: 400px;
+    box-shadow: 3px 5px 3px #e7e5e5;
 }
 
 

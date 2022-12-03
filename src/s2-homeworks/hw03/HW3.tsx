@@ -33,7 +33,7 @@ const HW3 = () => {
     const addUserCallback = (name: string) => {
         pureAddUserCallback(name, setUsers, users)
     }
-    console.log(users)
+
 
 
     return (
