@@ -27,6 +27,8 @@ const initialPeople: UserType[] = [
     {_id: 5, name: 'Ирина', age: 55},
 ]
 
+
+
 const HW8 = () => {
     const [people, setPeople] = useState<UserType[]>(initialPeople)
     const [currentSort, setCurrentSort] = useState('')
@@ -34,18 +36,16 @@ const HW8 = () => {
     const finalPeople = people.map((u: UserType) => <User key={u._id} u={u}/>)
 
     const sortUp = () => {
-        setPeople(
-            homeWorkReducer(initialPeople, {type: 'sort', payload: 'up'})
-        ) // в алфавитном порядке a.name > b.name
+        setPeople(homeWorkReducer(initialPeople, {type: 'sort', payload: 'up'})) // в алфавитном порядке a.name > b.name
         setCurrentSort('up')
     }
-
     const sortDown = () => {
-        setPeople(
-            homeWorkReducer(initialPeople, {type: 'sort', payload: 'down'})
-        ) // в обратном порядке a.name < b.name}
+        setPeople(homeWorkReducer(initialPeople, {type: 'sort', payload: 'down'})) // в обратном порядке a.name < b.name}
         setCurrentSort('down')
     }
+
+
+
     const check18 = () => {
         setPeople(
             homeWorkReducer(initialPeople, {type: 'check', payload: 18})
@@ -58,6 +58,7 @@ const HW8 = () => {
             <div className={s2.hwTitle}>Homework #8</div>
             <div className={s2.hw}>
                 <div className={s.container}>
+
                     <div className={s.buttonsContainer}>
                         <SuperButton
                             id={'hw8-button-up'}
@@ -92,6 +93,8 @@ const HW8 = () => {
 
                         <tbody>{finalPeople}</tbody>
                     </table>
+
+
                 </div>
             </div>
         </div>
