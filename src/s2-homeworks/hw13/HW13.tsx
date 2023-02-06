@@ -7,6 +7,7 @@ import success200 from './images/200.svg'
 import error400 from './images/400.svg'
 import error500 from './images/500.svg'
 import errorUnknown from './images/error.svg'
+import {logDOM} from "@testing-library/react";
 
 /*
 * 1 - дописать функцию send
@@ -20,6 +21,8 @@ const HW13 = () => {
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
 
+    const [disabled, setDisabled] = useState(false)
+
     const send = (x?: boolean | null) => () => {
         const url = x === null
             ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
@@ -29,7 +32,7 @@ const HW13 = () => {
         setImage('')
         setText('')
         setInfo('...loading')
-
+        setDisabled(true)
 
         axios
             .post(url, {success: x})
@@ -38,6 +41,8 @@ const HW13 = () => {
                 setImage(success200)
                 setText(res.data.errorText)
                 setInfo(res.data.info)
+
+
                 // дописать
             })
             .catch((e) => {
@@ -46,24 +51,27 @@ const HW13 = () => {
                     setImage(error500)
                     setText(e.response.data.errorText)
                     setInfo(e.response.data.info)
+                    setDisabled(true)
                 } else if (e.message === 'Request failed with status code 400') {
                     setCode('Ошибка' + ' ' + e.response.status + '!')
                     setImage(error400)
                     setText(e.response.data.errorText)
                     setInfo(e.response.data.info)
+                    setDisabled(true)
                 } else if (e.message === 'Network Error') {
-                    setCode(e.name)
-                    setImage(errorUnknown)
+                    setCode('Error')
                     setText(e.message)
+                    setInfo(e.name)
+                    setImage(errorUnknown)
+                    setDisabled(true)
                 }
+
                 // дописать
             })
-            .finally(() => {
-                const timerId = setTimeout(() => {
-                    return setInfo('')
-                }, 2000)
-                return () => clearTimeout(timerId)
-            })
+          .finally(() => {
+             return setDisabled(false)
+          })
+        console.log(disabled)
     }
 
 
@@ -78,7 +86,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
-                        disabled={!!info}
+                        disabled={disabled}
                     >
                         Send true
                     </SuperButton>
@@ -87,7 +95,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
-                        disabled={!!info}
+                        disabled={disabled}
                     >
                         Send false
                     </SuperButton>
@@ -96,7 +104,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
-                        disabled={!!info}
+                        disabled={disabled}
                     >
                         Send undefined
                     </SuperButton>
@@ -105,7 +113,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
-                        disabled={!!info}
+                        disabled={disabled}
                     >
                         Send null
                     </SuperButton>
