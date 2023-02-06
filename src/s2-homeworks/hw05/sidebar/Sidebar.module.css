@@ -8,7 +8,6 @@
     background: linear-gradient(#c9c9f3, #eedbde);
     transform: translateX(-100%);
     transition: transform 0.5s;
-
 }
 
 .sidebar.open {
