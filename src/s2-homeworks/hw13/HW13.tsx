@@ -21,29 +21,51 @@ const HW13 = () => {
     const [image, setImage] = useState('')
 
     const send = (x?: boolean | null) => () => {
-        const url =
-            x === null
-                ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-                : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
+        const url = x === null
+            ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
+            : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
 
         setCode('')
         setImage('')
         setText('')
         setInfo('...loading')
 
+
         axios
             .post(url, {success: x})
             .then((res) => {
-                setCode('Код 200!')
+                setCode('Код ' + res.status + '!')
                 setImage(success200)
+                setText(res.data.errorText)
+                setInfo(res.data.info)
                 // дописать
-
             })
             .catch((e) => {
+                if (e.message === "Request failed with status code 500") {
+                    setCode('Ошибка' + ' ' + e.response.status + '!')
+                    setImage(error500)
+                    setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
+                } else if (e.message === 'Request failed with status code 400') {
+                    setCode('Ошибка' + ' ' + e.response.status + '!')
+                    setImage(error400)
+                    setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
+                } else if (e.message === 'Network Error') {
+                    setCode(e.name)
+                    setImage(errorUnknown)
+                    setText(e.message)
+                }
                 // дописать
-
+            })
+            .finally(() => {
+                const timerId = setTimeout(() => {
+                    return setInfo('')
+                }, 2000)
+                return () => clearTimeout(timerId)
             })
     }
+
 
     return (
         <div id={'hw13'}>
@@ -56,7 +78,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={!!info}
                     >
                         Send true
                     </SuperButton>
@@ -65,7 +87,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={!!info}
                     >
                         Send false
                     </SuperButton>
@@ -74,7 +96,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={!!info}
                     >
                         Send undefined
                     </SuperButton>
@@ -83,7 +105,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
-
+                        disabled={!!info}
                     >
                         Send null
                     </SuperButton>
