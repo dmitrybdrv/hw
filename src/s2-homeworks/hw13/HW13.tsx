@@ -90,6 +90,7 @@ const HW13 = () => {
                     >
                         Send true
                     </SuperButton>
+
                     <SuperButton
                         id={'hw13-send-false'}
                         onClick={send(false)}
@@ -99,6 +100,7 @@ const HW13 = () => {
                     >
                         Send false
                     </SuperButton>
+
                     <SuperButton
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
@@ -108,6 +110,7 @@ const HW13 = () => {
                     >
                         Send undefined
                     </SuperButton>
+
                     <SuperButton
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
