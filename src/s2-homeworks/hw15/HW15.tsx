@@ -63,6 +63,9 @@ const HW15 = () => {
             .catch(res => {
                 console.warn(res)
             })
+            .finally(() => {
+                setLoading(false)
+            })
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
