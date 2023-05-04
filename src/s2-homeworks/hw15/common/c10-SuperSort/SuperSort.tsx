@@ -20,7 +20,7 @@ export const pureChange = (sort: string, down: string, up: string) => {
     } else if (sort === up) {
         return '';
     } else {
-        return up;
+        return down;
     }
 }
 
