@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from 'react'
+import React, {useCallback, useEffect, useState} from 'react'
+import {log} from "util";
 import s2 from '../../s1-main/App.module.css'
 import s from './HW15.module.css'
 import axios from 'axios'
@@ -67,7 +68,6 @@ const HW15 = () => {
                 setLoading(false)
             })
     }
-
     const onChangePagination = (newPage: number, newCount: number) => {
 
         setPage(newPage)
@@ -79,15 +79,14 @@ const HW15 = () => {
         setSearchParams()
 
     }
-
-    const onChangeSort = (newSort: string) => {
+    const onChangeSort = useCallback((newSort: string) => {
 
         setSort(newSort)
         setPage(1)
 
         sendQuery({sort: newSort, page, count})
         setSearchParams(newSort)
-    }
+    }, [])
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
@@ -107,6 +106,7 @@ const HW15 = () => {
             </div>
         </div>
     ))
+
 
     return (
         <div id={'hw15'}>
