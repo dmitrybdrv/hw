@@ -50,7 +50,6 @@ const HW15 = () => {
 
 
 
-
     const sendQuery = (params: ParamsType) => {
         setLoading(true)
         getTechs(params)
@@ -68,24 +67,25 @@ const HW15 = () => {
             })
     }
     const onChangePagination = (newPage: number, newCount: number) => {
-
         setPage(newPage)
 
         setCount(newCount)
 
         sendQuery({page: newPage, count: newCount, sort})
 
-        setSearchParams()
+        setSearchParams({
+            page: String(newPage),
+            count: String(newCount)
+        })
 
     }
-    const onChangeSort = useCallback((newSort: string) => {
-
+    const onChangeSort = (newSort: string) => {
         setSort(newSort)
         setPage(1)
 
         sendQuery({sort: newSort, page, count})
-        setSearchParams(newSort)
-    }, [])
+        setSearchParams({ sort: newSort})
+    }
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
